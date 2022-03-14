@@ -1,0 +1,176 @@
+    1  cd
+    2  kubectl get nodes
+    3  kubectl get pods
+    4  kubectl get ns
+    5  kubectl get pods -n sitio-system
+    6  kubectl get pods -n istio-system
+    7  kubectl get pods -n istio-ingress
+    8  helm status istiod -n istio-system
+    9  helm get all istiod
+   10  helm status istiod 
+   11  helm get all istiod -n istio-system
+   12  cd
+   13  kubectl get pods
+   14  kubectl get nodes
+   15  ls
+   16  cd micro*
+   17  ll
+   18  cd rele*
+   19  ll
+   20  kubctl apply -f kubernetes-manifests.yaml
+   21  pwd
+   22  cp /root/microservices-demo/release/kubernetes-manifests.yaml .
+   23  cd
+   24  ls
+   25  cd
+   26  pwd
+   27  cd istio_install
+   28  ll
+   29  kubctl apply -f kubernetes-manifests.yaml
+   30  cd
+   31  kubctl get pods
+   32  kubectl get nodes
+   33  kubectl apply -f kubernetes-manifests.yaml
+   34  ls
+   35  cd ist*
+   36  kubectl apply -f kubernetes-manifests.yaml
+   37  kubectl get pod
+   38  kubectl delete -f kubernetes-manifests.yaml
+   39  kubectl get ns
+   40  cd
+   41  kubectl get ns
+   42  kubectl get svc
+   43  kubectl get ns -n istio-system
+   44  kubectl get pods  -n istio-system
+   45  istioctl install
+   46  ubectl get pods -n default
+   47  kubectl get pods -n default --show-labels
+   48  kubectl label namespace default istio-injection=enabled
+   49  kubectl apply -f  kubernetes-manifests.yaml
+   50  cd
+   51  ls
+   52  cd istio*
+   53  ls
+   54  kubectl apply -f  kubernetes-manifests.yaml
+   55  kubectl get pods
+   56  kubectl get pods -o wide
+   57  kubect get svc
+   58  kubectl get svc
+   59  kubectl get svc -o wide
+   60  cd
+   61  cd ist*
+   62  ll
+   63  cd ist*
+   64  ll
+   65  cd sampl*
+   66  ls
+   67  cd add*
+   68  pwd
+   69  kubectl apply -f /root/istio_install/istio-1.13.2/samples/addons
+   70  kubectl get pods -n istio-system
+   71  kubectl get pods -n istio-system -o wide
+   72  kubectl get svc -n istio-system -o wide
+   73  kubectl get svc 
+   74  kubectl get svc  - o wide
+   75  kubectl get svc  -o wide
+   76  curl 10.97.233.231:80
+   77  kubectl get svc  -o wide
+   78  kubectl get svc -n istio-system -o wide
+   79  kubectl port-forward svc/kiali -n istio-system 20001
+   80  ll
+   81  vi kiali.yaml
+   82  cd
+   83  tree
+   84  apt install tree
+   85  tree 
+   86  kubectl get pods
+   87  kubectl get pods -o wide
+   88  kubectl get svc -o wide
+   89  kubectl describe svc frontend-external
+   90  curl  10.97.233.231:80
+   91  kubectl describe svc frontend-external
+   92  kubectl get svc -o wide
+   93  ls
+   94  cd istio*
+   95  cd
+   96  apt-get update
+   97  sudo apt-get install docker.io
+   98  sudo systemctl enable docker
+   99  sudo systemctl start docker
+  100  curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add
+  101  sudo apt-add-repository "deb http://apt.kubernetes.io/ kubernetes-xenial main"
+  102  sudo apt-get install kubeadm kubelet kubectl
+  103  apt-get update
+  104  sudo apt-mark hold kubeadm kubelet kubectl
+  105  sudo swapoff -a
+  106  cd ../../etc/docker
+  107  sudo touch daemon.json
+  108  sudo vi daemon.json
+  109  sudo systemctl restart docker
+  110  sudo kubeadm reset
+  111  cd /home/ubuntu
+  112  udo kubeadm init --pod-network-cidr=10.244.0.0/16
+  113  sudo kubeadm init --pod-network-cidr=10.244.0.0/16
+  114  cd
+  115  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  116  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+  117  kubectl get nods
+  118  kubectl get nodes
+  119  sudo kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+  120  kubectl get nodes
+  121  kubectl get nodes -o wide
+  122  apt install git
+  123  mkdir istio_install
+  124  curl -L https://istio.io/downloadIstio | sh -
+  125  ls
+  126  mv istio-1.13.2 istio_install
+  127  cd isti*
+  128  ll
+  129  cd 
+  130  ls
+  131  git clone https://github.com/sarkar157112/microservices-demo.git
+  132  cd
+  133  export PATH="$PATH:/root/istio-1.13.2/bin"
+  134  istioctl
+  135  pwd
+  136  cd
+  137  cd ist*
+  138  ll
+  139  cd ist*
+  140  cd bin
+  141  export PATH="$PATH:/root/istio-1.13.2/bin"
+  142  kubectl get ns
+  143  istioctl install
+  144  cd
+  145  istioctl install
+  146  ls
+  147  cd istio*
+  148  istioctl install
+  149  export PATH="$PATH:/root/istio-1.13.2/bin"
+  150  istioctl x precheck
+  151  istioctl install
+  152  cd
+  153  curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
+  154  chmod 700 get_helm.sh
+  155  ./get_helm.sh
+  156  helm version
+  157  helm repo add istio https://istio-release.storage.googleapis.com/charts
+  158  kubectl create namespace istio-system
+  159  helm install istio-base istio/base -n istio-system
+  160  helm install istiod istio/istiod -n istio-system --wait
+  161  kubectl create namespace istio-ingress
+  162  kubectl label namespace istio-ingress istio-injection=enabled
+  163  helm install istio-ingress istio/gateway -n istio-ingress --wait
+  164  cd
+  165  kubectl get svc
+  166  kubectl edit svc frontend-external
+  167  kubectl get ns
+  168  kubectl get pods -n istio-ingress
+  169  kubectl edit pods istio-ingress-7b64c49dd5-sj52l  -n istio-ingress
+  170  kubectl get pods
+  171  kubectl get svc
+  172  kubectl get svc -o wide
+  173  kubectl svc -o wide
+  174  cd
+  175  history
+  176  history>istio.txt
